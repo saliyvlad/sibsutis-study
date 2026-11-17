@@ -1,0 +1,25 @@
+# Виртуальное окружение Python
+venv/
+env/
+
+# Системные файлы Git
+.git/
+.gitignore
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Временный большой файл для тестирования (п. 7 задания)
+bigfile.tmp
+
+# Локальные конфигурационные файлы (никогда не должны попадать в образ)
+.gitconfig-csc
+.env

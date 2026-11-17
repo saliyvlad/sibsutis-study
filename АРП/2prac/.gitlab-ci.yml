@@ -1,0 +1,52 @@
+image: pcr.csc.sibsutis.ru/docker.io/docker:cli
+
+services:
+  - name: pcr.csc.sibsutis.ru/docker.io/docker:dind
+    alias: docker
+
+variables:
+  DOCKER_HOST: tcp://docker:2376
+  DOCKER_TLS_CERTDIR: "/certs"
+
+stages:
+  - build
+
+build_and_push:
+  stage: build
+  tags:
+    - amd64 
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: always
+    - if: $CI_COMMIT_BRANCH
+      when: manual
+  script:
+    - echo "=== 1. Login to GitLab Registry ==="
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    
+    - echo "=== 2. Настройка контекста Docker для buildx (обход ошибки TLS) ==="
+    - docker context create tls-context --docker "host=$DOCKER_HOST,ca=$DOCKER_CERT_PATH/ca.pem,cert=$DOCKER_CERT_PATH/cert.pem,key=$DOCKER_CERT_PATH/key.pem" || true
+    - unset DOCKER_HOST
+    - docker context use tls-context
+
+    - echo "=== 3. Создание multi-arch билдера ==="
+    - docker buildx create --use --name multiarch-builder
+
+    - echo "=== 4. Формирование тегов (ЯВНОЕ ИМЯ ОБРАЗА) ==="
+    - |
+      if [ -n "$CI_COMMIT_TAG" ]; then
+        export FULL_IMAGE_NAME_TAG="$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG"
+        export FULL_IMAGE_NAME_HASH="$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+        export IMAGE_TAGS="-t $FULL_IMAGE_NAME_TAG -t $FULL_IMAGE_NAME_HASH"
+        
+      else
+        export FULL_IMAGE_NAME_HASH="$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+        export IMAGE_TAGS="-t $FULL_IMAGE_NAME_HASH"
+        
+        echo "ИМЯ ОБРАЗА: $FULL_IMAGE_NAME_HASH"
+      fi
+
+    - echo "=== 5. Сборка и отправка multi-arch образа ==="
+    - docker buildx build --no-cache -f Dockerfile.ci --platform linux/amd64,linux/arm64 $IMAGE_TAGS --push .
+    
+    - echo "=== Сборка успешно завершена ==="
