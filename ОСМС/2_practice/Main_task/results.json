@@ -1,0 +1,56 @@
+{
+  "inputs": {
+    "f_GHz": 1.8,
+    "f_MHz": 1800.0,
+    "N_sectors": 3,
+    "TxPowerBS": 46.0,
+    "TxPowerUE": 24.0,
+    "AntGainBS": 21.0,
+    "PenetrationM": 15.0,
+    "IM": 1.0,
+    "BW_UL_MHz": 10.0,
+    "BW_DL_MHz": 20.0,
+    "NF_BS": 2.4,
+    "NF_UE": 6.0,
+    "SINR_DL": 2.0,
+    "SINR_UL": 4.0,
+    "MIMO": 2,
+    "MIMOGain": 3.0,
+    "FeederLoss": 2.9,
+    "hBS": 30.0,
+    "hms": 1.5,
+    "terrain": "U",
+    "Area_macro": 100.0,
+    "Area_micro": 4.0
+  },
+  "link_budget": {
+    "ThermalNoise_UL": -104.0,
+    "ThermalNoise_DL": -100.99,
+    "RxSensBS": -97.6,
+    "RxSensUE": -92.99,
+    "MAPL_UL": 126.7,
+    "MAPL_DL": 144.09
+  },
+  "cost231_params": {
+    "A": 46.3,
+    "B": 33.9,
+    "a_hms": -0.001,
+    "Lclutter": 0.0
+  },
+  "macro": {
+    "d_DL_km": 2.152,
+    "d_UL_km": 0.598,
+    "R_km": 0.598,
+    "S_site_km2": 0.697,
+    "N_BS_raw": 143.39,
+    "N_BS": 144
+  },
+  "micro": {
+    "d_DL_m": 1339.0,
+    "d_UL_m": 449.7,
+    "R_m": 449.7,
+    "S_site_km2": 0.394,
+    "N_BS_raw": 10.14,
+    "N_BS": 11
+  }
+}

@@ -1,0 +1,21 @@
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\contentsline {chapter}{Цель}{3}{chapter*.3}%
+\contentsline {chapter}{\chapternumberline {1}Лабораторная работа №5. Вычисление интеграла свертки}{4}{chapter.1}%
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\contentsline {section}{\numberline {1.1}Аналитическое вычисление интеграла свертки}{4}{section.1.1}%
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\contentsline {section}{\numberline {1.2}Численное интегрирование интеграла свертки}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Свертка прямоугольного сигнала и гармонического колебания}{8}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Связь свертки и преобразования Фурье}{9}{section.1.4}%
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\contentsline {chapter}{Заключение}{10}{chapter*.13}%
+\contentsline {chapter}{Список использованных источников}{11}{section*.16}%
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
+\xpg@aux {}{russian}
+\xpg@aux {indentfirst=true,forceheadingpunctuation=false}{russian}
