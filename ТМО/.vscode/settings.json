@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/c:\\Users\\saliy_03jey6u\\Desktop\\2course\\ТМО\\latex_laboratory\\0_main.aux": true,
+        "**/c:\\Users\\saliy_03jey6u\\Desktop\\2course\\ТМО\\latex_laboratory\\0_main.log": true,
+        "**/c:\\Users\\saliy_03jey6u\\Desktop\\2course\\ТМО\\latex_laboratory\\0_main.gz": true,
+        "**/c:\\Users\\saliy_03jey6u\\Desktop\\2course\\ТМО\\latex_laboratory\\0_main.out": true
+    }
+}
