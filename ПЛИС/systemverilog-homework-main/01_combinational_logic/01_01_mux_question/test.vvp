@@ -1,0 +1,230 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "14.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_000002086D1076F0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000002086D118150 .scope module, "mux_2_1" "mux_2_1" 3 4;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d0";
+    .port_info 1 /INPUT 4 "d1";
+    .port_info 2 /INPUT 1 "sel";
+    .port_info 3 /OUTPUT 4 "y";
+o000002086D11AF38 .functor BUFZ 4, c4<zzzz>; HiZ drive
+v000002086D100120_0 .net "d0", 3 0, o000002086D11AF38;  0 drivers
+o000002086D11AF68 .functor BUFZ 4, c4<zzzz>; HiZ drive
+v000002086D0FF720_0 .net "d1", 3 0, o000002086D11AF68;  0 drivers
+o000002086D11AF98 .functor BUFZ 1, c4<z>; HiZ drive
+v000002086D100080_0 .net "sel", 0 0, o000002086D11AF98;  0 drivers
+v000002086D0FF860_0 .net "y", 3 0, L_000002086D168270;  1 drivers
+L_000002086D168270 .functor MUXZ 4, o000002086D11AF38, o000002086D11AF68, o000002086D11AF98, C4<>;
+S_000002086D1182E0 .scope module, "testbench" "testbench" 4 3;
+ .timescale 0 0;
+v000002086D168310_0 .var "d0", 3 0;
+v000002086D168950_0 .var "d1", 3 0;
+v000002086D168630_0 .var "d2", 3 0;
+v000002086D169670_0 .var "d3", 3 0;
+v000002086D1681D0_0 .var "sel", 1 0;
+v000002086D169030_0 .net "y", 3 0, L_000002086D168F90;  1 drivers
+S_000002086D118470 .scope module, "inst" "mux_4_1" 4 9, 3 15 0, S_000002086D1182E0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d0";
+    .port_info 1 /INPUT 4 "d1";
+    .port_info 2 /INPUT 4 "d2";
+    .port_info 3 /INPUT 4 "d3";
+    .port_info 4 /INPUT 2 "sel";
+    .port_info 5 /OUTPUT 4 "y";
+v000002086D100300_0 .net *"_ivl_1", 0 0, L_000002086D169B70;  1 drivers
+v000002086D1001C0_0 .net *"_ivl_3", 0 0, L_000002086D1686D0;  1 drivers
+v000002086D100260_0 .net *"_ivl_4", 3 0, L_000002086D168770;  1 drivers
+v000002086D0FFA40_0 .net *"_ivl_7", 0 0, L_000002086D168810;  1 drivers
+v000002086D0FF900_0 .net *"_ivl_8", 3 0, L_000002086D1690D0;  1 drivers
+v000002086D0FF400_0 .net "d0", 3 0, v000002086D168310_0;  1 drivers
+v000002086D0FF4A0_0 .net "d1", 3 0, v000002086D168950_0;  1 drivers
+v000002086D0FF540_0 .net "d2", 3 0, v000002086D168630_0;  1 drivers
+v000002086D0FF5E0_0 .net "d3", 3 0, v000002086D169670_0;  1 drivers
+v000002086D0FF9A0_0 .net "sel", 1 0, v000002086D1681D0_0;  1 drivers
+v000002086D0FFAE0_0 .net "y", 3 0, L_000002086D168F90;  alias, 1 drivers
+L_000002086D169B70 .part v000002086D1681D0_0, 1, 1;
+L_000002086D1686D0 .part v000002086D1681D0_0, 0, 1;
+L_000002086D168770 .functor MUXZ 4, v000002086D168630_0, v000002086D169670_0, L_000002086D1686D0, C4<>;
+L_000002086D168810 .part v000002086D1681D0_0, 0, 1;
+L_000002086D1690D0 .functor MUXZ 4, v000002086D168310_0, v000002086D168950_0, L_000002086D168810, C4<>;
+L_000002086D168F90 .functor MUXZ 4, L_000002086D1690D0, L_000002086D168770, L_000002086D169B70, C4<>;
+S_000002086D167FF0 .scope task, "test" "test" 4 16, 4 16 0, S_000002086D1182E0;
+ .timescale 0 0;
+v000002086D0FFB80_0 .var "td0", 3 0;
+v000002086D168D10_0 .var "td1", 3 0;
+v000002086D169D50_0 .var "td2", 3 0;
+v000002086D16A070_0 .var "td3", 3 0;
+v000002086D1698F0_0 .var "tsel", 1 0;
+v000002086D169990_0 .var "ty", 3 0;
+TD_testbench.test ;
+    %load/vec4 v000002086D0FFB80_0;
+    %load/vec4 v000002086D168D10_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v000002086D169D50_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v000002086D16A070_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v000002086D1698F0_0;
+    %concat/vec4; draw_concat_vec4
+    %split/vec4 2;
+    %store/vec4 v000002086D1681D0_0, 0, 2;
+    %split/vec4 4;
+    %store/vec4 v000002086D169670_0, 0, 4;
+    %split/vec4 4;
+    %store/vec4 v000002086D168630_0, 0, 4;
+    %split/vec4 4;
+    %store/vec4 v000002086D168950_0, 0, 4;
+    %store/vec4 v000002086D168310_0, 0, 4;
+    %delay 1, 0;
+    %load/vec4 v000002086D169030_0;
+    %load/vec4 v000002086D169990_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call/w 4 29 "$display", "FAIL %s", "testbench.sv" {0 0 0};
+    %vpi_func/s 4 30 "$sformatf", "%h", v000002086D168310_0 {0 0 0};
+    %vpi_func/s 4 30 "$sformatf", "%h", v000002086D168950_0 {0 0 0};
+    %vpi_func/s 4 30 "$sformatf", "%h", v000002086D168630_0 {0 0 0};
+    %vpi_func/s 4 30 "$sformatf", "%h", v000002086D169670_0 {0 0 0};
+    %vpi_func/s 4 30 "$sformatf", "%h", v000002086D1681D0_0 {0 0 0};
+    %vpi_call/w 4 30 "$display", "++ INPUT    => {%s, %s, %s, %s, %s}", S<4,str>, S<3,str>, S<2,str>, S<1,str>, S<0,str> {0 0 5};
+    %vpi_func/s 4 31 "$sformatf", "%h", v000002086D169990_0 {0 0 0};
+    %vpi_call/w 4 31 "$display", "++ EXPECTED => {%s}", S<0,str> {0 0 1};
+    %vpi_func/s 4 32 "$sformatf", "%h", v000002086D169030_0 {0 0 0};
+    %vpi_call/w 4 32 "$display", "++ ACTUAL   => {%s}", S<0,str> {0 0 1};
+    %vpi_call/w 4 33 "$finish", 32'sb00000000000000000000000000000001 {0 0 0};
+T_0.0 ;
+    %end;
+    .scope S_000002086D1182E0;
+T_1 ;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 15, 15, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 15, 15, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 15, 15, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v000002086D0FFB80_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002086D168D10_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002086D169D50_0, 0, 4;
+    %pushi/vec4 15, 15, 4;
+    %store/vec4 v000002086D16A070_0, 0, 4;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002086D1698F0_0, 0, 2;
+    %pushi/vec4 15, 15, 4;
+    %store/vec4 v000002086D169990_0, 0, 4;
+    %fork TD_testbench.test, S_000002086D167FF0;
+    %join;
+    %vpi_call/w 4 50 "$display", "PASS %s", "testbench.sv" {0 0 0};
+    %vpi_call/w 4 51 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "01_01_mux_question.sv";
+    "testbench.sv";

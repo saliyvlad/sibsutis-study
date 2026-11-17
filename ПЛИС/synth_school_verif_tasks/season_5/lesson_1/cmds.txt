@@ -1,0 +1,84 @@
+git clone https://github.com/serge0699/synth_school_verif_tasks
+
+cd synth_school_verif_tasks/season_5/lesson_1
+
+cd examples/
+make EXAMPLE=01_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=02_mux SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=03_comp SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=04_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=01_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=11_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=04_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=05_shifter SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=06_sum SIM_OPTS=-gui
+
+cd tasks/
+make EXAMPLE=03_comp SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=12_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=13_comp SIM_OPTS=-gui
+
+cd tasks/
+make EXAMPLE=04_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=14_sum SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=07_sum SIM_OPTS="-gui –sv_seed 34545"
+
+cd examples/
+make EXAMPLE=07_sum SIM_OPTS="-gui –sv_seed 23144"
+
+cd examples/
+make EXAMPLE=15_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=19_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=16_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=17_pow SIM_OPTS=-gui
+
+cd tasks/
+make EXAMPLE=05_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=18_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=20_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=21_pow SIM_OPTS=-gui
+
+cd tasks/
+make EXAMPLE=06_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=22_pow SIM_OPTS=-gui
+
+cd examples/
+make EXAMPLE=23_pow SIM_OPTS=-gui
